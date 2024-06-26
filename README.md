@@ -1,4 +1,3 @@
-()[https://youtu.be/4QeQcnztk2Y]
 [![YouTube version of the README](https://img.youtube.com/vi/4QeQcnztk2Y/0.jpg)](https://youtu.be/4QeQcnztk2Y)
 
 ### Story of phone lock
