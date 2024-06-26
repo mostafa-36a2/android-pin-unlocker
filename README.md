@@ -1,3 +1,5 @@
+Youtube version of the README:
+
 [![YouTube version of the README](https://img.youtube.com/vi/4QeQcnztk2Y/0.jpg)](https://youtu.be/4QeQcnztk2Y)
 
 ### Story of phone lock
@@ -40,13 +42,21 @@ We have several assumptions that we have to check before go with this solution:
 - I need to link my computer to the phone, so I can test all the possibilities. 
 - Aziz, came to the rescue with [[ESP32]] as OTG solution, [espusb](https://github.com/cnlohr/espusb) repo, and [this](https://www.youtube.com/watch?v=ntm1iTQdCzE) YouTube tutorial.
 - First we were trying with the user interface.
-![[doc/assets/3-access-webui.png]]
 
-![[doc/assets/unlock-phone-open-loop.jpg]]
-- I had made before a prioritization list with some excel formulas, now I am ready with the possibilities. 
+![Access webui](doc/assets/3-access-webui.png)
+
+- I had made before a prioritization list with some excel formulas, now I am ready with the possibilities.
+
+And came up with the following design:
+
+![Unlock phone open loop](doc/assets/unlock-phone-open-loop.jpg)
+
 #### Open loop design
+
 Started with an open loop system.
-![[doc/assets/open-flow.jpg]]
+
+![Open loop flow](doc/assets/open-flow.jpg)
+
 But could't trust it, it was unreliable due to several reasons:
 - No feedback: The code can't find out the result of orders.
 - Uncertain with the results: I can't trust the code as there is no feedback, what if it was dropping some possibilities.
@@ -64,6 +74,9 @@ But could't trust it, it was unreliable due to several reasons:
 - To close the loop, we need to capture images from the web cam, with some [[cv2]] processing, to find out where is the current highlighted element.
 - Then we want to capture each number entry.
 - Manually monitoring the snapshots, just to check that the process is going correctly.
+
+![Closed loop flow](doc/assets/closed-loop-flow.jpg)
+
 - Like any computer vision project, several issues raised as illumination and noise. 
 #### Handling failed attempts
 After manually checking the results, we have found several failed attempts, decided to manually test them.
@@ -93,4 +106,4 @@ Finally unlocked 2476
 #### Phones
 - 4 Digits pin is insecure testing.   
 - Keeping phone away is not impossible
-- Phones are dangerous, I was going to be kicked off my WhatsApp business, my gmail needs [[2FA]].
+- Phones are dangerous, I was going to be kicked off my WhatsApp business, my gmail needs 2FA.
